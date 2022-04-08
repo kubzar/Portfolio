@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import styled from 'styled-components'
+import { useRouter } from 'next/router';
 
 const LogoStyled = styled.nav`
     display: flex;
@@ -14,7 +16,7 @@ const LinkSwitcherStyled = styled.nav`
     align-items: center;
     flex-basis: calc(100% / 3);
 `
-const LinkStyled = styled.nav`
+const LinkStyled = styled(Link)`
     font-size: 18px;
     font-weight: 600;
     &:not(:last-child) {
@@ -58,23 +60,40 @@ const Wrapper = styled.section`
     padding: 20px;
 `
 
+/* 
+    Masonry Gallery:
+        https://reactjsexample.com/tag/masonry/
+        https://freefrontend.com/css-masonry-layout-examples/
+    NextJs Links:
+        https://nextjs.org/docs/api-reference/next/link
+    NextJs Images:
+        https://nextjs.org/docs/api-reference/next/image
+    Conditional Link active class:
+        https://dev.to/yuridevat/how-to-add-styling-to-an-active-link-in-nextjs-593e
+*/
+
 const Navigation = () => {
+    const router = useRouter();
     return (
         <Wrapper>
             <LogoStyled>
                 JZ.
             </LogoStyled>
             <LinkSwitcherStyled>
-                <LinkStyled>
-                    Home
+                <LinkStyled href="/">
+                    <a className={router.pathname == "/" ? "active" : ""}>
+                        Home
+                    </a>
                 </LinkStyled>
-                <LinkStyled>
-                    Portfolio
+                <LinkStyled href="/portfolio">
+                    <a className={router.pathname == "/portfolio" ? "active" : ""}>
+                        Portfolio
+                    </a>
                 </LinkStyled>
-                <LinkStyled>
+                <LinkStyled href="/">
                     About
                 </LinkStyled>
-                <LinkStyled>
+                <LinkStyled href="/">
                     Contact
                 </LinkStyled>
             </LinkSwitcherStyled>
