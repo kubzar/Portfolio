@@ -1,21 +1,21 @@
-import type { NextPage } from 'next'
+import Footer from '../components/Footer'
 import Head from 'next/head'
 import Image from 'next/image'
-import styled from 'styled-components'
 import Navigation from '../components/Navigation'
-import Footer from '../components/Footer'
+import type { NextPage } from 'next'
+import styled from 'styled-components'
 import styles from '../styles/Home.module.css'
 
-const FilterBarStyled = styled.a`
+const FilterBarStyled = styled.div`
   display: flex;
   flex-basis: calc(100% / 8);
   margin-left: 100px;
 `
-const MainContainerStyled = styled.a`
+const MainContainerStyled = styled.div`
   display: flex;
 `
 
-const GreetingTextStyled = styled.a`
+const GreetingTextStyled = styled.div`
   text-align: right;
   margin-top: 80px;
   color: black;
