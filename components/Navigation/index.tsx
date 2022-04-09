@@ -16,9 +16,9 @@ const LinkSwitcherStyled = styled.nav`
     align-items: center;
     flex-basis: calc(100% / 3);
 `
-const LinkStyled = styled(Link)`
+const LinkStyled = styled.a`
     font-size: 18px;
-    font-weight: 600;
+    color: #bcbcbc;
     &:not(:last-child) {
         margin-right:  50px;
     }
@@ -28,6 +28,9 @@ const LinkStyled = styled(Link)`
     }
     transition: 0.1s ease-in-out;
     transition-delay: 0.05s;
+    &.active {
+        color: OliveDrab;
+    }
 `
 const LanguageSwitcherStyled = styled.nav`
     display: flex;
@@ -80,20 +83,21 @@ const Navigation = () => {
                 JZ.
             </LogoStyled>
             <LinkSwitcherStyled>
-                <LinkStyled href="/">
-                    <a className={router.pathname == "/" ? "active" : ""}>
+                {/* Check the Next.js documentation for the "Link" component to understand the passHref property */}
+                <Link href="/" passHref>
+                    <LinkStyled className={router.pathname == "/" ? "active" : ""}>
                         Home
-                    </a>
-                </LinkStyled>
-                <LinkStyled href="/portfolio">
-                    <a className={router.pathname == "/portfolio" ? "active" : ""}>
+                    </LinkStyled>
+                </Link>
+                <Link href="/portfolio" passHref>
+                    <LinkStyled className={router.pathname == "/portfolio" ? "active" : ""}>
                         Portfolio
-                    </a>
-                </LinkStyled>
-                <LinkStyled href="/">
+                    </LinkStyled>
+                </Link>
+                <LinkStyled>
                     About
                 </LinkStyled>
-                <LinkStyled href="/">
+                <LinkStyled>
                     Contact
                 </LinkStyled>
             </LinkSwitcherStyled>
