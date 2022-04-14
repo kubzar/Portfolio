@@ -30,6 +30,16 @@ const Wrapper = styled.section`
     padding: 20px;
 `
 
+/**
+ * Scroll spy:
+ * https://github.com/pettiboy/react-ui-scrollspy/
+ * 
+ * 18n:
+ * https://nextjs.org/docs/advanced-features/i18n-routing
+ * https://github.com/vercel/next.js/tree/canary/examples/i18n-routing
+ * https://dev.to/codegino/your-guide-to-nextjs-internationalization-4aa4#content-translation
+ */
+
 const Home: NextPage = () => {
   return (
     <Wrapper>
