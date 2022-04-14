@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const SocialPagesStyled = styled.div`
     display: flex;
@@ -28,7 +29,7 @@ const CreditsStyled = styled.div`
     font-weight: 600;
 `
 
-const yearNow = new Date().getFullYear(); //A function defining the current year (found on the internet). Can you explain?
+const yearNow = new Date().getFullYear(); //A function defining the current year
 
 const ThemeSwitcherStyled = styled.div`
     display: flex;
@@ -62,12 +63,20 @@ const Footer = () => {
     return (
         <Wrapper style={{ position: "absolute", bottom: 0, width: "100%" }}>
             <SocialPagesStyled>
-                <SocialLinksStyled>
-                    INSTAGRAM
-                </SocialLinksStyled>
-                <SocialLinksStyled>
-                    LINKEDIN
-                </SocialLinksStyled>
+                <Link href="https://www.instagram.com/kubzar" passHref>
+                    {/*I tried to figure out how to make external links open in a new tab 
+                    by using the Link component, but none of the solutions that I'd found worked...
+                    I'll stick to regular Link href for now. 
+                    https://stackoverflow.com/questions/30202755/react-router-open-link-in-new-tab */}
+                    <SocialLinksStyled>
+                        INSTAGRAM
+                    </SocialLinksStyled>
+                </Link>
+                <Link href="https://www.linkedin.com/in/jakub-zarębski-497636143" passHref>
+                    <SocialLinksStyled >
+                        LINKEDIN
+                    </SocialLinksStyled>
+                </Link>
             </SocialPagesStyled>
             <CreditsStyled>
                 &copy;{yearNow} Jakub Zarębski
@@ -80,7 +89,7 @@ const Footer = () => {
                     DARK
                 </ThemeButtonStyled>
             </ThemeSwitcherStyled>
-        </Wrapper> //do wytłumaczenia Wrapper style {{ }}
+        </Wrapper>
     )
 }
 

@@ -4,14 +4,14 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
+import ImageCard from '../components/ImageCard'
 import styles from '../styles/Home.module.css'
 
 
 const FilterBarStyled = styled.div`
   display: flex;
-  flex-basis: calc(100% / 8);
+  flex-basis: calc(100% / 7);
   flex-direction: column;
-  margin-left: 100px;
 `
 
 const FilterLinkStyled = styled.div`
@@ -19,7 +19,8 @@ const FilterLinkStyled = styled.div`
     text-align: right;
     margin-top: 30px;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 800;
+    color: grey;
     &:hover {
         color: OliveDrab;
         cursor: pointer;
@@ -30,18 +31,33 @@ const FilterLinkStyled = styled.div`
 
 const MainContainerStyled = styled.div`
   display: flex;
+  flex-basis: calc(100% * 5 / 7);
+  flex-direction: column;
   margin-top: 30px;
+  justify-content: center;
+    align-items: center;
 `
 
-const LinkStyled = styled.div`
-  text-align: right;
+const FilterTitleStyled = styled.div`
   color: black;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+`
+
+const ImageContainerStyled = styled.div`
+    display: flex;
+    flex-basis: calc(100% / 5);
+    border-radius: 15px;
+    margin-bottom: 20px;
 `
 
 const Wrapper = styled.section`
     display:flex;
     justify-content: space between;
     padding: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
 `
 
 const About: NextPage = () => {
@@ -50,25 +66,40 @@ const About: NextPage = () => {
             <Wrapper>
                 <FilterBarStyled>
                     <FilterLinkStyled>
-                        Portrait
+                        PORTRAIT
                     </FilterLinkStyled>
                     <FilterLinkStyled>
-                        Event
+                        EVENT
                     </FilterLinkStyled>
                     <FilterLinkStyled>
-                        Travel
+                        TRAVEL
                     </FilterLinkStyled>
                     <FilterLinkStyled>
-                        Lifestyle
+                        LIFESTYLE
                     </FilterLinkStyled>
                 </FilterBarStyled>
                 <MainContainerStyled>
-                    <LinkStyled>
-                        This is the Portfolio page.
-                    </LinkStyled>
+                    <FilterTitleStyled>
+                        Portrait
+                    </FilterTitleStyled>
+
+                    <ImageContainerStyled>
+                        Kuba
+                        <ImageCard />
+                    </ImageContainerStyled>
+                    <FilterTitleStyled>
+                        Event
+                    </FilterTitleStyled>
+                    <FilterTitleStyled>
+                        Travel
+                    </FilterTitleStyled>
+                    <FilterTitleStyled>
+                        Lifestyle
+                    </FilterTitleStyled>
                 </MainContainerStyled>
             </Wrapper>
         </div>
+
     )
 }
 

@@ -9,6 +9,8 @@ const LogoStyled = styled.nav`
     font-size: 35px;
     font-weight: 900;
     margin-left: 100px;
+    &:hover {
+        cursor:pointer
 `
 const LinkSwitcherStyled = styled.nav`
     display: flex;
@@ -18,7 +20,8 @@ const LinkSwitcherStyled = styled.nav`
 `
 const LinkStyled = styled.a`
     font-size: 18px;
-    color: #bcbcbc;
+    font-weight: 600;
+    color: black;
     &:not(:last-child) {
         margin-right:  50px;
     }
@@ -79,9 +82,11 @@ const Navigation = () => {
     const router = useRouter();
     return (
         <Wrapper>
-            <LogoStyled>
-                JZ.
-            </LogoStyled>
+            <Link href="/" passHref>
+                <LogoStyled>
+                    JZ.
+                </LogoStyled>
+            </Link>
             <LinkSwitcherStyled>
                 {/* Check the Next.js documentation for the "Link" component to understand the passHref property */}
                 <Link href="/" passHref>
@@ -94,12 +99,16 @@ const Navigation = () => {
                         Portfolio
                     </LinkStyled>
                 </Link>
-                <LinkStyled>
+                <Link href="/about" passHref>
+                    <LinkStyled className={router.pathname == "/about" ? "active" : ""}>
                     About
-                </LinkStyled>
-                <LinkStyled>
+                    </LinkStyled>
+                </Link>
+                <Link href="/contact" passHref>
+                    <LinkStyled className={router.pathname =="/contact" ? "active" : ""}>
                     Contact
-                </LinkStyled>
+                    </LinkStyled>
+                </Link>
             </LinkSwitcherStyled>
             <LanguageSwitcherStyled>
                 <LanguageButtonStyled>
