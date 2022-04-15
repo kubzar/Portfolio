@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import Link from 'next/link'
+import styled from 'styled-components'
 
 const SocialPagesStyled = styled.div`
     display: flex;
@@ -61,7 +61,7 @@ const Wrapper = styled.section`
 
 const Footer = () => {
     return (
-        <Wrapper style={{ position: "absolute", bottom: 0, width: "100%" }}>
+        <Wrapper style={{ width: "100%" }}>
             <SocialPagesStyled>
                 <Link href="https://www.instagram.com/kubzar" passHref>
                     {/*I tried to figure out how to make external links open in a new tab 

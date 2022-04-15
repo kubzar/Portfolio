@@ -80,6 +80,7 @@ const Wrapper = styled.section`
 
 const Navigation = () => {
     const router = useRouter();
+    const { pathname, locale } = router;
     return (
         <Wrapper>
             <Link href="/" passHref>
@@ -101,21 +102,25 @@ const Navigation = () => {
                 </Link>
                 <Link href="/about" passHref>
                     <LinkStyled className={router.pathname == "/about" ? "active" : ""}>
-                    About
+                        About
                     </LinkStyled>
                 </Link>
                 <Link href="/contact" passHref>
-                    <LinkStyled className={router.pathname =="/contact" ? "active" : ""}>
-                    Contact
+                    <LinkStyled className={router.pathname == "/contact" ? "active" : ""}>
+                        Contact
                     </LinkStyled>
                 </Link>
             </LinkSwitcherStyled>
             <LanguageSwitcherStyled>
                 <LanguageButtonStyled>
-                    POL
+                    <Link href={pathname} className={locale == "pl" ? "active" : ""} passHref locale="pl">
+                        <a>POL</a>
+                    </Link>
                 </LanguageButtonStyled>
                 <LanguageButtonStyled>
-                    ENG
+                    <Link href={pathname} className={locale == "en" ? "active" : ""} passHref locale="en">
+                        <a>EN</a>
+                    </Link>
                 </LanguageButtonStyled>
             </LanguageSwitcherStyled>
         </Wrapper>

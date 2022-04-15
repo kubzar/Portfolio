@@ -1,12 +1,12 @@
-import type { NextPage } from 'next'
+import Footer from '../components/Footer'
 import Head from 'next/head'
 import Image from 'next/image'
-import styled from 'styled-components'
-import Navigation from '../components/Navigation'
-import Footer from '../components/Footer'
 import ImageCard from '../components/ImageCard'
+import Navigation from '../components/Navigation'
+import type { NextPage } from 'next'
+import styled from 'styled-components'
 import styles from '../styles/Home.module.css'
-
+import { useRouter } from 'next/router'
 
 const FilterBarStyled = styled.div`
   display: flex;
@@ -60,7 +60,16 @@ const Wrapper = styled.section`
     margin-right: 100px;
 `
 
+
+/**
+ * line-height: number;
+ * for controlling font spacing,
+ */
+
 const About: NextPage = () => {
+    const router = useRouter()
+    const { locale, locales } = router
+
     return (
         <div>
             <Wrapper>
@@ -80,18 +89,23 @@ const About: NextPage = () => {
                 </FilterBarStyled>
                 <MainContainerStyled>
                     <FilterTitleStyled>
-                        Portrait
+                        Portrait ({locale})
                     </FilterTitleStyled>
 
                     <ImageContainerStyled>
-                        Kuba
-                        <ImageCard />
+                        <div>Kuba</div>
+                        <div><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" />
+                        </div>
                     </ImageContainerStyled>
                     <FilterTitleStyled>
-                        Event
+                        <div>Event</div>
+                        <div><ImageCard image="https://source.unsplash.com/random/900×760/" alt="" /></div>
+                        <div><ImageCard image="https://source.unsplash.com/random/900×760/" alt="" /></div>
+                        <div><ImageCard image="https://source.unsplash.com/random/900×760/" alt="" /></div>
                     </FilterTitleStyled>
                     <FilterTitleStyled>
                         Travel
+                        <ImageCard image="https://source.unsplash.com/random/900×600/" alt="" />
                     </FilterTitleStyled>
                     <FilterTitleStyled>
                         Lifestyle

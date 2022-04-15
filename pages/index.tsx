@@ -34,10 +34,13 @@ const Wrapper = styled.section`
  * Scroll spy:
  * https://github.com/pettiboy/react-ui-scrollspy/
  * 
- * 18n:
+ * i18n:
  * https://nextjs.org/docs/advanced-features/i18n-routing
  * https://github.com/vercel/next.js/tree/canary/examples/i18n-routing
  * https://dev.to/codegino/your-guide-to-nextjs-internationalization-4aa4#content-translation
+ * 
+ * display: grid;
+ * https://grid.layoutit.com/
  */
 
 const Home: NextPage = () => {
