@@ -1,13 +1,17 @@
-import Image from 'next/image'
 import styled from 'styled-components'
+import Image from 'next/image'
 
 const ImageContainer = ({ image, alt }) => {
+
   return (
     <>
       <Image
         src={image}
         alt={alt}
-        width="100%" height="100%" objectFit="contain">
+        objectFit="contain"
+        width="100vw"
+        height="100vw"
+      >
       </Image>
     </>
   )

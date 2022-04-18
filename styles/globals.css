@@ -18,7 +18,7 @@ a {
   box-sizing: border-box;
 }
 
-nav, div {
+nav,
+div {
   font-family: 'Poppins', sans-serif;
 }
-

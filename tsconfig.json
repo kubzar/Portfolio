@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "components/ImageCard/index.jsx"
-  ],
+, "pages/portfolio.tsx"  ],
   "exclude": [
     "node_modules"
   ]

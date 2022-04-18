@@ -119,7 +119,7 @@ const Navigation = () => {
                 </LanguageButtonStyled>
                 <LanguageButtonStyled>
                     <Link href={pathname} className={locale == "en" ? "active" : ""} passHref locale="en">
-                        <a>EN</a>
+                        <a>ENG</a>
                     </Link>
                 </LanguageButtonStyled>
             </LanguageSwitcherStyled>
