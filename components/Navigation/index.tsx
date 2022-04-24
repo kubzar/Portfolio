@@ -11,6 +11,8 @@ const LogoStyled = styled.nav`
     margin-left: 100px;
     &:hover {
         cursor:pointer
+    }
+        margin-right: 50px;
 `
 const LinkSwitcherStyled = styled.nav`
     display: flex;
@@ -41,6 +43,7 @@ const LanguageSwitcherStyled = styled.nav`
     justify-content: end;
     align-items: center;
     margin-right: 100px;
+    margin-left: 50px;
 `
 
 const LanguageButtonStyled = styled.div`

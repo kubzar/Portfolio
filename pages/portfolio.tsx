@@ -12,6 +12,7 @@ const FilterBarStyled = styled.div`
   display: flex;
   flex-basis: calc(100% / 7);
   flex-direction: column;
+  margin-right: 50px;
 `
 
 const FilterLinkStyled = styled.div`
@@ -34,8 +35,8 @@ const MainContainerStyled = styled.div`
   flex-basis: calc(100% * 6 / 7);
   flex-direction: column;
   margin-top: 30px;
-  justify-content: center;
-    align-items: center;
+  
+    
 `
 
 const ImageCategoryStyled = styled.div`
@@ -46,18 +47,19 @@ flex-direction: column;
 
 const FilterTitleStyled = styled.div`
   display:flex;  
+  justify-content: left;
   color: black;
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
-  justify-conent: center;
   line-height: 1.25;
 `
 
 const ImageContainerStyled = styled.div`
     display: flex;
     margin-bottom: 20px;
-    flex-grow: 1;
+    min-height: 100%;
+    justify-content: flex-start;
 `
 
 const ImageColumnStyled = styled.div`
@@ -67,18 +69,30 @@ flex-direction: column;
 &:not(:last-child) {
     margin-right: 15px;
 }
+max-width: 300px;
+justify-content: flex-start;
 `
 
-const ImageComponentStyled = styled.div`
-border-radius: 15px;
+const ImageComponentHorizontalStyled = styled.div`
 margin-bottom: 15px;
+border-radius: 10px;
+overflow: hidden;
+max-width: 300px;
+height: 200px;
 position: relative;
-display: flex
+`
+
+const ImageComponentVerticalStyled = styled.div`
+margin-bottom: 15px;
+border-radius: 10px;
+overflow: hidden;
+max-width: 300px;
+height: 450px;
+position: relative;
 `
 
 const Wrapper = styled.section`
     display:flex;
-    justify-content: space between;
     padding: 20px;
     margin-left: 100px;
     margin-right: 100px;
@@ -117,45 +131,111 @@ const About: NextPage = () => {
                         </FilterTitleStyled>
                         <ImageContainerStyled>
                             <ImageColumnStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/" alt="" /></ImageComponentStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/1500x1000" alt="" /></ImageComponentHorizontalStyled>
                             </ImageColumnStyled>
                             <ImageColumnStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/700x1050" alt="" /></ImageComponentVerticalStyled>
                             </ImageColumnStyled>
                             <ImageColumnStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/600x900" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/600x400" alt="" /></ImageComponentHorizontalStyled>
                             </ImageColumnStyled>
                             <ImageColumnStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-                                <ImageComponentStyled><ImageCard image="https://source.unsplash.com/random/900×700/" alt="" /></ImageComponentStyled>
-
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/450x300" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
                             </ImageColumnStyled>
                         </ImageContainerStyled>
                     </ImageCategoryStyled>
-                    <FilterTitleStyled>
-                        <div>Event</div>
-                    </FilterTitleStyled>
-                    <div><ImageCard image="https://source.unsplash.com/random/900×760/" alt="" /></div>
-                    <div><ImageCard image="https://source.unsplash.com/random/900×760/" alt="" /></div>
-                    <div><ImageCard image="https://source.unsplash.com/random/900×760/" alt="" /></div>
 
-                    <FilterTitleStyled>
-                        Travel
-                        <ImageCard image="https://source.unsplash.com/random/900×600/" alt="" />
-                    </FilterTitleStyled>
-                    <FilterTitleStyled>
-                        Lifestyle
-                    </FilterTitleStyled>
+                    <ImageCategoryStyled>
+                        <FilterTitleStyled>
+                            Event ({locale})
+                        </FilterTitleStyled>
+                        <ImageContainerStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/1500x1000" alt="" /></ImageComponentHorizontalStyled>
+                            </ImageColumnStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/700x1050" alt="" /></ImageComponentVerticalStyled>
+                            </ImageColumnStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/600x900" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/600x400" alt="" /></ImageComponentHorizontalStyled>
+                            </ImageColumnStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/450x300" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                            </ImageColumnStyled>
+                        </ImageContainerStyled>
+                    </ImageCategoryStyled>
+
+                    <ImageCategoryStyled>
+                        <FilterTitleStyled>
+                            Travel ({locale})
+                        </FilterTitleStyled>
+                        <ImageContainerStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/1500x1000" alt="" /></ImageComponentHorizontalStyled>
+                            </ImageColumnStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/700x1050" alt="" /></ImageComponentVerticalStyled>
+                            </ImageColumnStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/600x900" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/600x400" alt="" /></ImageComponentHorizontalStyled>
+                            </ImageColumnStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/450x300" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                            </ImageColumnStyled>
+                        </ImageContainerStyled>
+                    </ImageCategoryStyled>
+
+                    <ImageCategoryStyled>
+                        <FilterTitleStyled>
+                            Lifestyle ({locale})
+                        </FilterTitleStyled>
+                        <ImageContainerStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/1500x1000" alt="" /></ImageComponentHorizontalStyled>
+                            </ImageColumnStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/700x1050" alt="" /></ImageComponentVerticalStyled>
+                            </ImageColumnStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/600x900" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/600x400" alt="" /></ImageComponentHorizontalStyled>
+                            </ImageColumnStyled>
+                            <ImageColumnStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/450x300" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                            </ImageColumnStyled>
+                        </ImageContainerStyled>
+                    </ImageCategoryStyled>
                 </MainContainerStyled>
             </Wrapper>
         </div>

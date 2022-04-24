@@ -9,8 +9,7 @@ const ImageContainer = ({ image, alt }) => {
         src={image}
         alt={alt}
         objectFit="contain"
-        width="100vw"
-        height="100vw"
+        layout="fill"
       >
       </Image>
     </>
