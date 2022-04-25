@@ -5,13 +5,15 @@ const ImageContainer = ({ image, alt }) => {
 
   return (
     <>
-      <Image
-        src={image}
-        alt={alt}
-        objectFit="contain"
-        layout="fill"
-      >
-      </Image>
+      <ContainerStyled>
+        <Image
+          src={image}
+          alt={alt}
+          objectFit="contain"
+          layout="fill"
+        >
+        </Image>
+      </ContainerStyled>
     </>
   )
 }
