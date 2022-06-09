@@ -35,8 +35,6 @@ const MainContainerStyled = styled.div`
   flex-basis: calc(100% * 6 / 7);
   flex-direction: column;
   margin-top: 30px;
-  
-    
 `
 
 const ImageCategoryStyled = styled.div`
@@ -49,8 +47,8 @@ const FilterTitleStyled = styled.div`
   display:flex;  
   justify-content: left;
   color: black;
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.25;
 `
@@ -65,12 +63,11 @@ const ImageContainerStyled = styled.div`
 const ImageColumnStyled = styled.div`
 display: flex;
 flex-basis: calc(100% / 4);
+width: 300px;
 flex-direction: column;
 &:not(:last-child) {
     margin-right: 15px;
 }
-max-width: 300px;
-justify-content: flex-start;
 `
 
 const ImageComponentHorizontalStyled = styled.div`
@@ -103,7 +100,7 @@ const Wrapper = styled.section`
  * for controlling font spacing,
  */
 
-const About: NextPage = () => {
+const Portfolio: NextPage = () => {
     const router = useRouter()
     const { locale, locales } = router
 
@@ -112,16 +109,16 @@ const About: NextPage = () => {
             <Wrapper>
                 <FilterBarStyled>
                     <FilterLinkStyled>
-                        PORTRAIT
+                        PORTRAIT ({locale})
                     </FilterLinkStyled>
                     <FilterLinkStyled>
-                        EVENT
+                        EVENT ({locale})
                     </FilterLinkStyled>
                     <FilterLinkStyled>
-                        TRAVEL
+                        TRAVEL ({locale})
                     </FilterLinkStyled>
                     <FilterLinkStyled>
-                        LIFESTYLE
+                        LIFESTYLE ({locale})
                     </FilterLinkStyled>
                 </FilterBarStyled>
                 <MainContainerStyled>
@@ -243,4 +240,4 @@ const About: NextPage = () => {
     )
 }
 
-export default About
+export default Portfolio

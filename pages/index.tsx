@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation'
 import type { NextPage } from 'next'
 import styled from 'styled-components'
 import styles from '../styles/Home.module.css'
+import { useRouter } from 'next/router'
 
 const FilterBarStyled = styled.div`
   display: flex;
@@ -44,6 +45,8 @@ const Wrapper = styled.section`
  */
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  const { pathname, locale } = router;
   return (
     <Wrapper>
       <FilterBarStyled>
@@ -51,7 +54,8 @@ const Home: NextPage = () => {
       </FilterBarStyled>
       <MainContainerStyled>
         <GreetingTextStyled>
-          Hello! <br /> It&#39;s Jakub.
+          {locale == "pl" ? "Cześć!" : locale == "en" ? "Hello!" : ""} <br />
+          {locale == "pl" ? "Jestem Jakub." : locale == "en" ? "It's Jakub." : ""}
         </GreetingTextStyled>
       </MainContainerStyled>
     </Wrapper>

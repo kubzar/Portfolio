@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { useRouter } from 'next/router';
 
 const SocialPagesStyled = styled.div`
     display: flex;
@@ -60,6 +61,8 @@ const Wrapper = styled.section`
 `
 
 const Footer = () => {
+    const router = useRouter();
+    const { pathname, locale } = router;
     return (
         <Wrapper style={{ width: "100%" }}>
             <SocialPagesStyled>
@@ -83,10 +86,10 @@ const Footer = () => {
             </CreditsStyled>
             <ThemeSwitcherStyled>
                 <ThemeButtonStyled>
-                    LIGHT
+                    {locale == "pl" ? "JASNY" : locale == "en" ? "LIGHT" : ""}
                 </ThemeButtonStyled>
                 <ThemeButtonStyled>
-                    DARK
+                    {locale == "pl" ? "CIEMNY" : locale == "en" ? "DARK" : ""}
                 </ThemeButtonStyled>
             </ThemeSwitcherStyled>
         </Wrapper>

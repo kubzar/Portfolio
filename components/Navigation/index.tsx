@@ -24,6 +24,7 @@ const LinkStyled = styled.a`
     font-size: 18px;
     font-weight: 600;
     color: black;
+    min-width: max-content;
     &:not(:last-child) {
         margin-right:  50px;
     }
@@ -59,6 +60,9 @@ const LanguageButtonStyled = styled.div`
     }
     transition: 0.1s ease-in-out;
     transition-delay: 0.05s;
+    &:active {
+        color:Black;
+    }
     
 `
 
@@ -95,22 +99,22 @@ const Navigation = () => {
                 {/* Check the Next.js documentation for the "Link" component to understand the passHref property */}
                 <Link href="/" passHref>
                     <LinkStyled className={router.pathname == "/" ? "active" : ""}>
-                        Home
+                        {locale == "pl" ? "Strona główna" : locale == "en" ? "Home" : ""}
                     </LinkStyled>
                 </Link>
                 <Link href="/portfolio" passHref>
                     <LinkStyled className={router.pathname == "/portfolio" ? "active" : ""}>
-                        Portfolio
+                        {locale == "pl" ? "Portfolio" : locale == "en" ? "Portfolio" : ""}
                     </LinkStyled>
                 </Link>
                 <Link href="/about" passHref>
                     <LinkStyled className={router.pathname == "/about" ? "active" : ""}>
-                        About
+                        {locale == "pl" ? "O mnie" : locale == "en" ? "About" : ""}
                     </LinkStyled>
                 </Link>
                 <Link href="/contact" passHref>
                     <LinkStyled className={router.pathname == "/contact" ? "active" : ""}>
-                        Contact
+                        {locale == "pl" ? "Kontakt" : locale == "en" ? "Contact" : ""}
                     </LinkStyled>
                 </Link>
             </LinkSwitcherStyled>
@@ -126,7 +130,7 @@ const Navigation = () => {
                     </Link>
                 </LanguageButtonStyled>
             </LanguageSwitcherStyled>
-        </Wrapper>
+        </Wrapper >
     )
 }
 
