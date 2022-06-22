@@ -17,7 +17,7 @@ const FilterBarStyled = styled.div`
 
 const FilterLinkStyled = styled.div`
     display: flex;    
-    text-align: right;
+    text-align: left;
     margin-top: 30px;
     font-size: 15px;
     font-weight: 800;
@@ -108,23 +108,25 @@ const Portfolio: NextPage = () => {
         <div>
             <Wrapper>
                 <FilterBarStyled>
+
                     <FilterLinkStyled>
-                        PORTRAIT ({locale})
+                        {locale == "pl" ? "PORTRETY " : locale == "en" ? "PORTRAITS" : ""}
                     </FilterLinkStyled>
                     <FilterLinkStyled>
-                        EVENT ({locale})
+                        {locale == "pl" ? "REPORTAŻ OKOLICZNOŚCIOWY" : locale == "en" ? "EVENTS" : ""}
                     </FilterLinkStyled>
                     <FilterLinkStyled>
-                        TRAVEL ({locale})
+                        {locale == "pl" ? "KRAJOBRAZY" : locale == "en" ? "LANDSCAPES" : ""}
                     </FilterLinkStyled>
                     <FilterLinkStyled>
-                        LIFESTYLE ({locale})
+                        {locale == "pl" ? "KONCERTY" : locale == "en" ? "CONCERTS" : ""}
                     </FilterLinkStyled>
+
                 </FilterBarStyled>
                 <MainContainerStyled>
                     <ImageCategoryStyled>
                         <FilterTitleStyled>
-                            Portrait ({locale})
+                            {locale == "pl" ? "Portrety" : locale == "en" ? "Portraits" : ""}
                         </FilterTitleStyled>
                         <ImageContainerStyled>
                             <ImageColumnStyled>
@@ -152,7 +154,7 @@ const Portfolio: NextPage = () => {
 
                     <ImageCategoryStyled>
                         <FilterTitleStyled>
-                            Event ({locale})
+                            {locale == "pl" ? "Reportaż okolicznościowy" : locale == "en" ? "Events" : ""}
                         </FilterTitleStyled>
                         <ImageContainerStyled>
                             <ImageColumnStyled>
@@ -180,7 +182,7 @@ const Portfolio: NextPage = () => {
 
                     <ImageCategoryStyled>
                         <FilterTitleStyled>
-                            Travel ({locale})
+                            {locale == "pl" ? "Krajobrazy" : locale == "en" ? "Landscapes" : ""}
                         </FilterTitleStyled>
                         <ImageContainerStyled>
                             <ImageColumnStyled>
@@ -208,7 +210,7 @@ const Portfolio: NextPage = () => {
 
                     <ImageCategoryStyled>
                         <FilterTitleStyled>
-                            Lifestyle ({locale})
+                            {locale == "pl" ? "Koncerty" : locale == "en" ? "Concerts" : ""}
                         </FilterTitleStyled>
                         <ImageContainerStyled>
                             <ImageColumnStyled>

@@ -61,7 +61,7 @@ const LanguageButtonStyled = styled.div`
     transition: 0.1s ease-in-out;
     transition-delay: 0.05s;
     &:active {
-        color:Black;
+        color: OliveDrab;
     }
     
 `
