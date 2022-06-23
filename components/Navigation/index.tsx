@@ -24,18 +24,23 @@ const LinkStyled = styled.a`
     font-size: 18px;
     font-weight: 600;
     color: black;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     min-width: max-content;
     &:not(:last-child) {
         margin-right:  50px;
     }
     &:hover {
-        color: OliveDrab;
+        background-color: WhiteSmoke;
+        border-radius: 5px;
         cursor: pointer;
     }
     transition: 0.1s ease-in-out;
     transition-delay: 0.05s;
     &.active {
-        color: OliveDrab;
+        color: #7DC387;  
     }
 `
 const LanguageSwitcherStyled = styled.nav`
@@ -50,20 +55,26 @@ const LanguageSwitcherStyled = styled.nav`
 const LanguageButtonStyled = styled.div`
     font-size: 15px;
     font-weight: 800;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 1.5px;
+    padding-bottom: 1px;
     color: grey;
     &:not(:last-child) {
-        margin-right:  10px;
+        margin-right:  5px;
     }
     &:hover {
-        color:OliveDrab;
-        cursor:pointer
+        background-color: WhiteSmoke;
+        border-radius: 5px;
+        cursor: pointer;
     }
+    &:active {
+        color: Black;
+        background-color: #7DC387;
+        border-radius: 5px;
+    }    
     transition: 0.1s ease-in-out;
     transition-delay: 0.05s;
-    &:active {
-        color: OliveDrab;
-    }
-    
 `
 
 const Wrapper = styled.section`
@@ -119,13 +130,13 @@ const Navigation = () => {
                 </Link>
             </LinkSwitcherStyled>
             <LanguageSwitcherStyled>
-                <LanguageButtonStyled>
-                    <Link href={pathname} className={locale == "pl" ? "active" : ""} passHref locale="pl">
+                <LanguageButtonStyled className={locale == "pl" ? "active" : ""}>
+                    <Link href={pathname} passHref locale="pl">
                         <a>POL</a>
                     </Link>
                 </LanguageButtonStyled>
-                <LanguageButtonStyled>
-                    <Link href={pathname} className={locale == "en" ? "active" : ""} passHref locale="en">
+                <LanguageButtonStyled className={locale == "en" ? "active" : ""}>
+                    <Link href={pathname} passHref locale="en">
                         <a>ENG</a>
                     </Link>
                 </LanguageButtonStyled>

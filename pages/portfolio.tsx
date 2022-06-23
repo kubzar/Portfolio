@@ -14,6 +14,15 @@ const FilterBarStyled = styled.div`
   flex-direction: column;
   margin-right: 50px;
 `
+const FIlterBarTitleStyled = styled.div`
+  display:flex;  
+  justify-content: left;
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 30px;
+  
+`
 
 const FilterLinkStyled = styled.div`
     display: flex;    
@@ -23,7 +32,7 @@ const FilterLinkStyled = styled.div`
     font-weight: 800;
     color: grey;
     &:hover {
-        color: OliveDrab;
+        color: #7DC387;
         cursor: pointer;
     }
     transition: 0.1s ease-in-out;
@@ -108,7 +117,9 @@ const Portfolio: NextPage = () => {
         <div>
             <Wrapper>
                 <FilterBarStyled>
-
+                    <FIlterBarTitleStyled>
+                        {locale == "pl" ? "Fotografia " : locale == "en" ? "Photography" : ""}
+                    </FIlterBarTitleStyled>
                     <FilterLinkStyled>
                         {locale == "pl" ? "PORTRETY " : locale == "en" ? "PORTRAITS" : ""}
                     </FilterLinkStyled>
@@ -131,11 +142,11 @@ const Portfolio: NextPage = () => {
                         <ImageContainerStyled>
                             <ImageColumnStyled>
                                 <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
-                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/500x750" alt="" /></ImageComponentVerticalStyled>
                                 <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/1500x1000" alt="" /></ImageComponentHorizontalStyled>
                             </ImageColumnStyled>
                             <ImageColumnStyled>
-                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/500x750" alt="" /></ImageComponentVerticalStyled>
                                 <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
                                 <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/700x1050" alt="" /></ImageComponentVerticalStyled>
                             </ImageColumnStyled>

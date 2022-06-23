@@ -12,12 +12,17 @@ const SocialLinksStyled = styled.div`
     align-items: center;
     font-size: 15px;
     font-weight: 800;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     &:not(:last-child) {
-        margin-right: 10px
+        margin-right: 2px
     }
     &:hover {
-        color:OliveDrab;
-        cursor:pointer
+        background-color: WhiteSmoke;
+        border-radius: 5px;
+        cursor: pointer;
     }
     transition: 0.1s ease-in-out;
     transition-delay: 0.05s;
@@ -28,6 +33,8 @@ const CreditsStyled = styled.div`
     justify-content: center;
     font-size: 15px;
     font-weight: 600;
+    padding-top: 1px;
+    padding-bottom: 1px;
 `
 
 const yearNow = new Date().getFullYear(); //A function defining the current year
@@ -42,12 +49,22 @@ const ThemeSwitcherStyled = styled.div`
 const ThemeButtonStyled = styled.div`
     font-size: 15px;
     font-weight: 800;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     &:not(:last-child) {
-        margin-right:  10px;
+        margin-right:  5px;
     }
     &:hover {
-        color:OliveDrab;
-        cursor:pointer
+        background-color: WhiteSmoke;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    &:active {
+        color: Black;
+        background-color: #7DC387;
+        border-radius: 5px;
     }
     transition: 0.1s ease-in-out;
     transition-delay: 0.05s;
