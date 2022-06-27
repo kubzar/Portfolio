@@ -12,7 +12,7 @@ const LogoStyled = styled.nav`
     &:hover {
         cursor:pointer
     }
-        margin-right: 50px;
+    margin-right: 50px;
 `
 const LinkSwitcherStyled = styled.nav`
     display: flex;
@@ -68,7 +68,7 @@ const LanguageButtonStyled = styled.div`
         border-radius: 5px;
         cursor: pointer;
     }
-    &:active {
+    &.active {
         color: Black;
         background-color: #7DC387;
         border-radius: 5px;

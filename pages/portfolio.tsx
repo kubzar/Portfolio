@@ -44,12 +44,14 @@ const MainContainerStyled = styled.div`
   flex-basis: calc(100% * 6 / 7);
   flex-direction: column;
   margin-top: 30px;
+  
 `
 
 const ImageCategoryStyled = styled.div`
-display: flex;
-min-width: 100%;
-flex-direction: column;
+    display: flex;
+    min-width: 100%;
+    flex-direction: column;
+    
 `
 
 const FilterTitleStyled = styled.div`
@@ -71,7 +73,6 @@ const ImageContainerStyled = styled.div`
 
 const ImageColumnStyled = styled.div`
 display: flex;
-flex-basis: calc(100% / 4);
 width: 300px;
 flex-direction: column;
 &:not(:last-child) {
@@ -83,7 +84,7 @@ const ImageComponentHorizontalStyled = styled.div`
 margin-bottom: 15px;
 border-radius: 10px;
 overflow: hidden;
-max-width: 300px;
+width: 300px;
 height: 200px;
 position: relative;
 `
@@ -92,7 +93,7 @@ const ImageComponentVerticalStyled = styled.div`
 margin-bottom: 15px;
 border-radius: 10px;
 overflow: hidden;
-max-width: 300px;
+width: 300px;
 height: 450px;
 position: relative;
 `
@@ -142,16 +143,16 @@ const Portfolio: NextPage = () => {
                         <ImageContainerStyled>
                             <ImageColumnStyled>
                                 <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
-                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com//500x750" alt="" /></ImageComponentVerticalStyled>
                                 <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/1500x1000" alt="" /></ImageComponentHorizontalStyled>
                             </ImageColumnStyled>
                             <ImageColumnStyled>
-                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/500x750" alt="" /></ImageComponentVerticalStyled>
+                                <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com//500x750" alt="" /></ImageComponentVerticalStyled>
                                 <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
                                 <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/700x1050" alt="" /></ImageComponentVerticalStyled>
                             </ImageColumnStyled>
                             <ImageColumnStyled>
-                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/900x600" alt="" /></ImageComponentHorizontalStyled>
+                                <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/300x200" alt="" /></ImageComponentHorizontalStyled>
                                 <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/600x900" alt="" /></ImageComponentVerticalStyled>
                                 <ImageComponentHorizontalStyled><ImageCard image="https://source.unsplash.com/random/600x400" alt="" /></ImageComponentHorizontalStyled>
                             </ImageColumnStyled>
