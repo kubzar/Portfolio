@@ -115,9 +115,13 @@ const Portfolio: NextPage = () => {
     const { locale, locales } = router
 
     return (
-        <div>
             <Wrapper>
                 <FilterBarStyled>
+                    {/*
+                     * GUILLE: Good job with the translations! A more common approach are packages called i18n. 
+                     * For next, you can check this one: https://github.com/i18next/next-i18next
+                     * Let me know if you don't know how to install it and use it.
+                     */}
                     <FIlterBarTitleStyled>
                         {locale == "pl" ? "Fotografia " : locale == "en" ? "Photography" : ""}
                     </FIlterBarTitleStyled>
@@ -141,6 +145,16 @@ const Portfolio: NextPage = () => {
                             {locale == "pl" ? "Portrety" : locale == "en" ? "Portraits" : ""}
                         </FilterTitleStyled>
                         <ImageContainerStyled>
+                                {/*
+                                 * GUILLE: Instead of two styles for Vertical and Horizontal, you can use props: https://styled-components.com/docs/basics#passed-props
+                                 * Then you'd simply do like: <ImageComponentStyled orientation="vertical">...</ImageComponentStyled> and
+                                 * height: ${props => props.orientation === "vertical" ? "450px" : "200px" }; 
+                                 */
+
+                                 /*
+                                  * GUILLE: 
+                                  * Also, the width of the images are making the width of the page scroll horizontally. Watch out with that or you'll get a scrollbar.
+                                  */}
                             <ImageColumnStyled>
                                 <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com/random/300x450" alt="" /></ImageComponentVerticalStyled>
                                 <ImageComponentVerticalStyled><ImageCard image="https://source.unsplash.com//500x750" alt="" /></ImageComponentVerticalStyled>
@@ -249,8 +263,6 @@ const Portfolio: NextPage = () => {
                     </ImageCategoryStyled>
                 </MainContainerStyled>
             </Wrapper>
-        </div>
-
     )
 }
 
